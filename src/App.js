@@ -1,12 +1,9 @@
-import About from "./components/About";
-import Navbar from "./components/Navbar";
 import { AiFillGithub } from "react-icons/ai";
 import { useSpring, animated, useTransition, config } from "react-spring";
 import { useEffect, useRef, useState } from "react";
 // { stiffness: 300, damping: 50 }
 import { ResizeObserver } from "@juggle/resize-observer";
 import useMeasure from "react-use-measure";
-import Progress from "./components/Progress";
 import Skills from "./components/Skills";
 import skills, { projects } from "./data";
 import Project from "./components/Project.jsx";
