@@ -1,19 +1,20 @@
 import Box from "./Box";
+import { useSpring, animated } from "react-spring";
 
 export default function About() {
   return (
-    <div className="flex p-10 flex-col">
-      <div className="text-white text-5xl font-bold flex items-end">
-        <p>Hi, I am Dilum</p>
-        <p className="text-white text-xl font-bold pl-3"> </p>
-      </div>
-
-      <Box className="mt-4 ml-4 max-w-lg">
-        <p>
+    <animated.div className="flex p-10 flex-1 justify-center items-center">
+      <div>
+        <p className="font-medium py-3">Hi, I am Dilum {" 👋 "}</p>
+        <p className="text-white">
           I am third year computer science student who is currently looking for
-          a 8 month internship starting from this Summer. I am interested in
+          an internship. I am interested, and have some experience in frontend,
+          backend and mobile develpoment. I am also interested in reinforcement
+          learning and hoping to get into data science world as well. I am
+          really trilled that you visted my website, scroll down to see some of
+          my cool projects.
         </p>
-      </Box>
-    </div>
+      </div>
+    </animated.div>
   );
 }
