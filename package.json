@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "homepage": "http://d-liya.github.io/portfolio",
   "dependencies": {
     "@juggle/resize-observer": "^3.3.1",
