@@ -25,7 +25,7 @@ function App() {
   });
   const _translateYMain = useSpring({
     opacity: !open ? 0 : 1,
-    bottom: 50,
+    bottom: 40,
   });
   const _styleIcon = useSpring({
     color: scrollY > bounds.height + 280 ? "" : "black",
@@ -34,7 +34,16 @@ function App() {
   useEffect(() => {
     function updateScrollPosition(evt) {
       const _scrollY = evt.pageY - evt.y;
-      setScrollY(_scrollY);
+      setScrollY(scrollY);
+      if (_scrollY <= 0) {
+        setOpen(false);
+      } else {
+        setOpen(true);
+      }
+    }
+    function updateTouchPosition(evt) {
+      const _scrollY = evt.pageY - evt.y;
+      setScrollY(scrollY);
       if (_scrollY <= 0) {
         setOpen(false);
       } else {
@@ -44,17 +53,27 @@ function App() {
 
     if (scroller && scroller.current) {
       scroller.current.addEventListener("wheel", updateScrollPosition, false);
+      scroller.current.addEventListener(
+        "touchmove",
+        updateTouchPosition,
+        false
+      );
       return function cleanup() {
         scroller.current.removeEventListener(
           "wheel",
           updateScrollPosition,
           false
         );
+        scroller.current.removeEventListener(
+          "touchmove",
+          updateTouchPosition,
+          false
+        );
       };
     }
   }, []);
   return (
-    <div ref={scroller}>
+    <div ref={scroller} className="overflow-hidden">
       <p className="font-semibold text-white z-10 absolute left-5 top-5">
         DILUM LIYANAGE
       </p>
@@ -69,6 +88,9 @@ function App() {
       </animated.a>
       <div
         className="flex min-h-screen w-full font-sans fixed -z-10"
+        style={{
+          WebkitBackfaceVisibility: "hidden",
+        }}
         ref={mainRef}
       >
         <div className="flex-1 bg-sky-500 relative">
@@ -80,7 +102,7 @@ function App() {
               <Slide bottom cascade when={open} duration={500}>
                 <div>
                   <p className="text-slate-900 font-bold text-lg ">
-                    Hi, I am Dilum 👋{" "}
+                    Hi, I am Dilum 👋
                   </p>
                   <p className="font-bold ">
                     I am third year computer science student who is currently
@@ -207,32 +229,36 @@ function App() {
             ))}
           </div>
         </div>
-        <div
-          className="w-full bg-sky-500 flex justify-center items-center"
-          style={{ height: 100 }}
-        >
-          <a
-            href="https://www.linkedin.com/in/dilum-liyanage-947787197"
-            className="px-2 text-white font-bold hover:text-sky-100 cursor-pointer"
-            target="_blank"
-            rel="noreferrer"
+      </div>
+      <div className="md:px-10 bg-sky-50">
+        <Slide right>
+          <div
+            className=" bg-sky-500 flex justify-center items-center flex-col md:flex-row "
+            style={{ height: 100 }}
           >
-            LinkedIn
-          </a>
-          <a
-            href="assets/dilum-liyanage-resume.pdf"
-            className="px-2 text-white font-bold hover:text-sky-100 cursor-pointer"
-            download
-          >
-            Download My Resume
-          </a>
-          <a
-            className="px-2 text-white font-bold hover:text-sky-100 cursor-pointer"
-            href="mailto:ddelwakkadal@mun.ca"
-          >
-            Email
-          </a>
-        </div>
+            <a
+              href="https://www.linkedin.com/in/dilum-liyanage-947787197"
+              className="px-2 text-white font-bold hover:text-sky-100 cursor-pointer"
+              target="_blank"
+              rel="noreferrer"
+            >
+              LinkedIn
+            </a>
+            <a
+              href="assets/dilum-liyanage-resume.pdf"
+              className="px-2 text-white font-bold hover:text-sky-100 cursor-pointer"
+              download
+            >
+              Download My Resume
+            </a>
+            <a
+              className="px-2 text-white font-bold hover:text-sky-100 cursor-pointer"
+              href="mailto:ddelwakkadal@mun.ca"
+            >
+              Email
+            </a>
+          </div>
+        </Slide>
       </div>
     </div>
   );
