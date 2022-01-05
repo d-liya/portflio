@@ -35,7 +35,7 @@ function App() {
     function updateScrollPosition(evt) {
       const _scrollY = evt.pageY - evt.y;
       setScrollY(_scrollY);
-      if (_scrollY === 0) {
+      if (_scrollY <= 0) {
         setOpen(false);
       } else {
         setOpen(true);
@@ -206,6 +206,32 @@ function App() {
               <Project key={project.title} {...project} />
             ))}
           </div>
+        </div>
+        <div
+          className="w-full bg-sky-500 flex justify-center items-center"
+          style={{ height: 100 }}
+        >
+          <a
+            href="https://www.linkedin.com/in/dilum-liyanage-947787197"
+            className="px-2 text-white font-bold hover:text-sky-100 cursor-pointer"
+            target="_blank"
+            rel="noreferrer"
+          >
+            LinkedIn
+          </a>
+          <a
+            href="assets/dilum-liyanage-resume.pdf"
+            className="px-2 text-white font-bold hover:text-sky-100 cursor-pointer"
+            download
+          >
+            Download My Resume
+          </a>
+          <a
+            className="px-2 text-white font-bold hover:text-sky-100 cursor-pointer"
+            href="mailto:ddelwakkadal@mun.ca"
+          >
+            Email
+          </a>
         </div>
       </div>
     </div>
