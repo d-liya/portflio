@@ -1,6 +1,6 @@
 const skills = [
   {
-    title: "Font End Develpoment",
+    title: "Front End Development",
     skills: [
       {
         name: "HTML/CSS",
@@ -25,7 +25,7 @@ const skills = [
     ],
   },
   {
-    title: "Back End Develpoment",
+    title: "Back End Development",
     skills: [
       {
         name: "Node.js",
@@ -58,7 +58,7 @@ const skills = [
     ],
   },
   {
-    title: "Mobile Develpoment",
+    title: "Mobile Development",
     skills: [
       {
         name: "React Native",
@@ -140,6 +140,7 @@ export const projects = [
     link: " Download a runnable jar here",
     linkHref: "assets/GameOfFocus.jar",
     download: true,
+    preview: true,
   },
   {
     title: "Collection Of AI Projects (Academic Project)",
@@ -151,5 +152,6 @@ export const projects = [
       "Solving Sudoku using genetic algorithms.",
       "Finding the shortest path in a maze using reinforcement learning.",
     ],
+    preview: true,
   },
 ];

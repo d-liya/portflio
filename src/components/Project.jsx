@@ -10,7 +10,7 @@ export default function Project({
 }) {
   return (
     <Slide bottom cascade duration={500}>
-      <div className="py-5 max-w-lg">
+      <div className="p-5 max-w-lg">
         <h1 className="font-black text-lg">{title}</h1>
         <p className="max-w-lg pt-1">{description}</p>
         <ol className="list-disc py-5 pl-5">
