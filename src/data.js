@@ -85,10 +85,6 @@ const skills = [
         name: "Git",
         percentage: 0.8,
       },
-      {
-        name: "Reinforcement Learning",
-        percentage: 0.5,
-      },
     ],
   },
 ];
