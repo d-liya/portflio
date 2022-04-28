@@ -91,15 +91,7 @@ function App() {
                       <p className="text-slate-900 font-bold text-lg ">
                         Hi, I am Dilum 👋
                       </p>
-                      <p className="font-bold ">
-                        I am third year computer science student who is
-                        currently looking for an internship.
-                      </p>
-                      <p className="font-bold">
-                        I am interested, and have some experience in frontend,
-                        backend and mobile develpoment.
-                      </p>
-                      <p className="font-bold">
+                      <p className="font-bold md:text-lg">
                         I am really excited that you visted my website, scroll
                         down to see some of my cool projects.✌️
                       </p>
@@ -191,6 +183,7 @@ function App() {
                 {projects.map((project) => (
                   <Project key={project.title} {...project} />
                 ))}
+                <Image src={require("./images/GameOfFocus.png")} />
               </div>
             </div>
           </section>
@@ -209,23 +202,6 @@ function App() {
                   rel="noreferrer"
                 >
                   LinkedIn
-                </a>
-              </li>
-              <li>
-                <a
-                  href="assets/dilum-liyanage-resume.pdf"
-                  className="px-2 text-white font-bold hover:text-sky-100 cursor-pointer"
-                  download
-                >
-                  Download My Resume
-                </a>
-              </li>
-              <li>
-                <a
-                  className="px-2 text-white font-bold hover:text-sky-100 cursor-pointer"
-                  href="mailto:ddelwakkadal@mun.ca"
-                >
-                  Email
                 </a>
               </li>
             </ul>
