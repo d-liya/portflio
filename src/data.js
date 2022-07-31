@@ -93,7 +93,7 @@ export default skills;
 
 export const projects = [
   {
-    title: "Pask (Personal Project)",
+    title: "Pask (Mobile App)",
     description:
       "This is a task management app which is integrateed with a github. So when a user commit's a messages to their github account the tasks gets updated. \n Reasons for this project: I have a lot of unfinished projects in my github and created this to find a way to keep track of each project.",
     info: [
@@ -106,7 +106,7 @@ export const projects = [
     linkHref: "https://pask-6f72b.web.app",
   },
   {
-    title: "Mun Mobile (Personal Project)",
+    title: "Mun Mobile",
     description:
       "A re-design of the existing Mun mobile (one of the mobile apps used by students at Memorial University) app focused on the user interface and the user experience.",
     info: [
@@ -124,20 +124,20 @@ export const projects = [
     link: " Visit the website here",
     linkHref: "https://nl-life.vercel.app",
   },
-  {
-    title: "Game Of Forcus (Collaborative Project)",
-    description:
-      "This is a game which was created as a part of course work for a course on Software Engineering",
-    info: [
-      "Uses Object Oriented design patterns.",
-      "Developed using Java.",
-      "Uses Swing.",
-    ],
-    link: " Download a runnable jar here",
-    linkHref: "assets/GameOfFocus.jar",
-    download: true,
-    preview: true,
-  },
+  // {
+  //   title: "Game Of Forcus (Collaborative Project)",
+  //   description:
+  //     "This is a game which was created as a part of course work for a course on Software Engineering",
+  //   info: [
+  //     "Uses Object Oriented design patterns.",
+  //     "Developed using Java.",
+  //     "Uses Swing.",
+  //   ],
+  //   link: " Download a runnable jar here",
+  //   linkHref: "assets/GameOfFocus.jar",
+  //   download: true,
+  //   preview: true,
+  // },
   {
     title: "Collection Of AI Projects (Academic Project)",
     description:

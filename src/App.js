@@ -116,58 +116,62 @@ function App() {
             <div className="flex-1 bg-sky-50"></div>
           </section>
           <div className="w-full" style={{ height: bounds.height + 280 }} />
-          <section
-            className="bg-sky-50 flex md:p-20 lg:flex-nowrap flex-wrap"
-            ref={secondRef}
-          >
-            <div className="p-10 pb-5 min-h-screen">
+          <section className={` bg-sky-50 p-10`}>
+            <div className="flex flex-col md:ml-32 mt-5">
               <h1 className="font-black text-6xl  md:text-8xl text-sky-500 pb-20">
                 <Slide bottom cascade duration={2000}>
                   <h3 className="flex flex-col">
-                    <span>STA</span>
-                    <span>CK &</span>
-                    <span>EXPE</span>
-                    <span>RIENCE</span>
+                    <span>AB</span>
+                    <span>OUT</span>
                   </h3>
                 </Slide>
               </h1>
-              <Slide bottom cascade duration={500}>
-                <div className="max-w-lg">
-                  <h4 className="font-black text-lg ">
-                    Junior Software Engineer <br /> @ Experity Inc.
-                  </h4>
-                  <ol className="list-disc pt-5 pl-5">
-                    <li>
-                      Built REST full APIs to integrate a React based client
-                      side with a Swing boot (Java) server side.
-                    </li>
-                    <li>Created client facing React components.</li>
-                    <li>
-                      Designed relational database models to store data and
-                      writing SQL/HQL queries to access it.
-                    </li>
-                    <li>
-                      Maintained web applications written in older frameworks
-                      such as Struts 2.0 and GWT.
-                    </li>
-                  </ol>
-                </div>
-              </Slide>
-            </div>
-
-            <Slide right>
-              <div className="flex bg-slate-900 lg:bg-sky-50 w-full lg:max-w-xl lg:justify-center lg:items-center">
-                <animated.div className="p-5 grid grid-cols-1 md:grid-cols-2  ">
-                  {skills.map((skill) => (
-                    <Skills
-                      key={skill.title}
-                      title={skill.title}
-                      skills={skill.skills}
-                    />
-                  ))}
-                </animated.div>
+              <div className="flex flex-wrap">
+                <Slide bottom cascade duration={500}>
+                  <div className="max-w-lg pb-5">
+                    <h4 className="font-black text-lg ">
+                      Founder <br /> @ Scholalify.
+                    </h4>
+                    <p className="py-5 ">
+                      Scholalify is an educational technology company focused on
+                      providing learning resources for Advanced-level students
+                      in Sri Lanka. We are still in public beta phase and are
+                      planning to launch in the coming months.
+                    </p>
+                    <a
+                      href="https://scholalify.com"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-sky-500 hover:text-sky-600 font-bold "
+                    >
+                      Visit scholalify.com
+                    </a>
+                  </div>
+                </Slide>
+                <Slide bottom cascade duration={500}>
+                  <div className="max-w-lg">
+                    <h4 className="font-black text-lg">
+                      Software Engineer <br /> @ Experity Inc.
+                    </h4>
+                    <ol className="list-disc pt-5 pl-5">
+                      <li>
+                        Worked on building scalable, secure and reliable
+                        restfull services.
+                      </li>
+                      <li>Created client facing React components.</li>
+                      <li>
+                        Designed relational database models to store data and
+                        writing SQL/HQL queries to access it.
+                      </li>
+                      <li>
+                        Maintained web applications written in older frameworks
+                        such as Struts 2.0 and GWT.
+                      </li>
+                    </ol>
+                  </div>
+                </Slide>
               </div>
-            </Slide>
+            </div>
           </section>
           <section className={` bg-sky-50 p-10`}>
             <div className="flex flex-col md:ml-32 mt-5">
@@ -183,7 +187,7 @@ function App() {
                 {projects.map((project) => (
                   <Project key={project.title} {...project} />
                 ))}
-                <Image src={require("./images/GameOfFocus.png")} />
+                {/* <Image src={require("./images/GameOfFocus.png")} /> */}
               </div>
             </div>
           </section>
