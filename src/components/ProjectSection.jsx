@@ -8,7 +8,7 @@ export default function ProjectSection(props) {
           <p className="text-systemGray text-xl pt-5">{props.description}</p>
         </section>
         <section className="">
-          <a href="www.scholalify.com" target="_blank" rel="noreferrer">
+          <a href={props.imageLink} target="_blank" rel="noreferrer">
             <img
               src={props.imageUrl}
               className="md:max-w-[500px]  rounded-2xl p-1 border-4 border-systemGray hover:border-white cursor-pointer"
