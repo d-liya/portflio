@@ -79,7 +79,7 @@ function App() {
             ))}
           </section>
           <section ref={workRef}>
-            <div className="p-4 min-h-screen pt-10 text-center">
+            <div className="p-4  pt-20 text-center">
               <h4 className="font-semibold text-white text-6xl py-5 ">Work</h4>
               <p className="text-systemGray ">
                 Here is my most recent work experiences.
@@ -91,7 +91,7 @@ function App() {
             </div>
           </section>
           <section>
-            <div className="p-4 min-h-screen pt-10 flex flex-col items-center justify-center">
+            <div className="p-4 pt-20 flex flex-col items-center justify-center">
               <h4 className="font-semibold text-white text-6xl py-5 ">
                 Contact
               </h4>{" "}
