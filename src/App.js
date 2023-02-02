@@ -32,7 +32,7 @@ function App() {
   return (
     <>
       <div className="overflow-hidden">
-        <header className="flex w-full justify-center sm:justify-between items-center p-5 px-10 fixed bg-black">
+        <header className="flex w-full justify-center sm:justify-between items-center px-10 p-5 fixed bg-black mb-20 z-50">
           <h1 className="font-semibold text-white ">DILUM LIYANAGE</h1>
           {/* <animated.a
             style={_styleIcon}
@@ -53,9 +53,9 @@ function App() {
         <main>
           <section
             ref={homeRef}
-            className="flex min-h-screen justify-center bg-black text-white items-center flex-col text-center"
+            className="flex min-h-screen justify-center bg-black text-white items-center flex-col text-center mt-20"
           >
-            <h1 className="font-semibold text-6xl py-5 p-4">
+            <h1 className="font-semibold text-4xl sm:text-6xl py-5 p-4">
               Hello friendly human <br />I am Dilum
             </h1>
             <h2 className="text-systemGray p-4 text-lg">
@@ -117,7 +117,7 @@ function App() {
         </main>
         <footer className="md:px-10 text-systemGray ">
           <ul
-            className="flex justify-center items-center flex-col md:flex-row "
+            className="flex justify-center items-center"
             style={{ height: 100 }}
           >
             <li>
