@@ -1,18 +1,17 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.98e1bac3.css",
-    "main.js": "/portfolio/static/js/main.8c5403a3.js",
+    "main.css": "/portfolio/static/css/main.babe8384.css",
+    "main.js": "/portfolio/static/js/main.9d5933d7.js",
     "static/js/787.9b9c0edf.chunk.js": "/portfolio/static/js/787.9b9c0edf.chunk.js",
-    "static/media/GameOfFocus.png": "/portfolio/static/media/GameOfFocus.6f73ea3b835580e7c772.png",
-    "static/media/GameOfFocus1.png": "/portfolio/static/media/GameOfFocus1.7694815a35d74a5befa1.png",
-    "static/media/GameOfFocus2.png": "/portfolio/static/media/GameOfFocus2.f44b6e931a6d7d3cb23b.png",
+    "static/media/pask.png": "/portfolio/static/media/pask.03c61b749dba9f9772e1.png",
+    "static/media/scholalify.png": "/portfolio/static/media/scholalify.0de4dc9ed573ceef6e62.png",
     "index.html": "/portfolio/index.html",
-    "main.98e1bac3.css.map": "/portfolio/static/css/main.98e1bac3.css.map",
-    "main.8c5403a3.js.map": "/portfolio/static/js/main.8c5403a3.js.map",
+    "main.babe8384.css.map": "/portfolio/static/css/main.babe8384.css.map",
+    "main.9d5933d7.js.map": "/portfolio/static/js/main.9d5933d7.js.map",
     "787.9b9c0edf.chunk.js.map": "/portfolio/static/js/787.9b9c0edf.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.98e1bac3.css",
-    "static/js/main.8c5403a3.js"
+    "static/css/main.babe8384.css",
+    "static/js/main.9d5933d7.js"
   ]
 }
