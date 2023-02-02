@@ -1,13 +1,13 @@
 import React from "react";
 export default function ProjectSection(props) {
   return (
-    <article className="text-white flex flex-col items-center p-10 pt-20">
-      <div className="flex flex-1 flex-wrap justify-center">
-        <section className="p-10 max-w-[800px] lg:max-w-[450px] md:p-0 md:pr-10">
+    <article className="text-white flex flex-col items-center p-5 sm:p-10 pt-20">
+      <div className="flex flex-1 flex-wrap justify-center items-center">
+        <section className="p-5 sm:p-10 max-w-[800px] lg:max-w-[450px] md:p-0 md:pr-10">
           <h1 className=" font-semibold text-2xl">{props.title}</h1>
           <p className="text-systemGray text-xl pt-5">{props.description}</p>
         </section>
-        <section className="">
+        <section className="px-5">
           <a href={props.imageLink} target="_blank" rel="noreferrer">
             <img
               src={props.imageUrl}
@@ -17,7 +17,7 @@ export default function ProjectSection(props) {
           </a>
         </section>
       </div>
-      <section className="bg-systemGray6 px-10 py-5 max-w-[800px] rounded-xl mt-10">
+      <section className="bg-systemGray6 px-5 sm:px-10 py-5 max-w-[800px] rounded-xl mt-10">
         <h2 className="font-semibold text-lg">{props.title2}</h2>
         <p className=" text-systemGray pt-2">{props.description2}</p>
       </section>
