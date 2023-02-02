@@ -1,67 +1,40 @@
-import { AiFillGithub } from "react-icons/ai";
-import { useSpring, animated } from "react-spring";
-import { useEffect, useRef, useState } from "react";
-// { stiffness: 300, damping: 50 }
-import { ResizeObserver } from "@juggle/resize-observer";
-import useMeasure from "react-use-measure";
-import Skills from "./components/Skills";
-import skills, { academicProjects, projects } from "./data";
-import Project from "./components/Project.jsx";
-import { Slide } from "react-reveal";
-import GameOfFocus from "./images/GameOfFocus.png";
-import Modal from "./components/Modal";
-import Image from "./components/Image";
+import { useCallback, useRef } from "react";
+import Button from "./components/Button";
+import ScrollDOwnAnimation from "./images/scroll-down.json";
+import { useLottie } from "lottie-react";
+import ProjectSection from "./components/ProjectSection";
+import { projects } from "./data";
+import WorkSection from "./components/WorkSection";
+import ContactAnimation from "./images/contact.json";
 function App() {
-  const [open, setOpen] = useState(false);
-  const [mainRef, bounds] = useMeasure({ polyfill: ResizeObserver });
-  const scroller = useRef();
-  const [secondRef, secondBounds] = useMeasure({ polyfill: ResizeObserver });
-  const [scrollY, setScrollY] = useState();
+  const { View: ScrollDOwnView } = useLottie({
+    animationData: ScrollDOwnAnimation,
+    loop: true,
+  });
+  const { View: ContactView } = useLottie({
+    animationData: ContactAnimation,
+    loop: true,
+  });
+  const homeRef = useRef();
+  const projecrRef = useRef();
+  const workRef = useRef();
 
-  const _texttranslateX = useSpring({
-    transform: !open ? "translate(0px,0px)" : "translate(-100px,-50px)",
-  });
-  const _translateY = useSpring({
-    transform: !open ? "translateX(0px)" : `translateX(${bounds.width / 2}px)`,
-  });
-  const _translateYMain = useSpring({
-    opacity: !open ? 0 : 1,
-    bottom: 40,
-  });
-  const _styleIcon = useSpring({
-    color: scrollY > bounds.height + 280 ? "" : "black",
-  });
-
-  useEffect(() => {
-    function updateScrollPosition(evt) {
-      const _scrollY = evt.pageY - evt.y;
-      setScrollY(_scrollY);
-      if (_scrollY <= 0) {
-        setOpen(false);
-      } else {
-        setOpen(true);
-      }
-    }
-
-    if (scroller && scroller.current) {
-      const node = scroller.current;
-      node.addEventListener("wheel", updateScrollPosition, false);
-      node.addEventListener("touchmove", updateScrollPosition, false);
-      return function cleanup() {
-        node.removeEventListener("wheel", updateScrollPosition, false);
-        node.removeEventListener("touchmove", updateScrollPosition, false);
-      };
-    }
-  }, []);
+  const naviagteTo = useCallback(
+    (ref) => () => {
+      ref.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    },
+    []
+  );
 
   return (
     <>
-      <div ref={scroller} className="overflow-hidden">
-        <header>
-          <h1 className="font-semibold text-white z-10 absolute left-5 top-5">
-            DILUM LIYANAGE
-          </h1>
-          <animated.a
+      <div className="overflow-hidden">
+        <header className="flex w-full justify-center sm:justify-between items-center p-5 px-10 fixed bg-black">
+          <h1 className="font-semibold text-white ">DILUM LIYANAGE</h1>
+          {/* <animated.a
             style={_styleIcon}
             href="https://github.com/d-liya"
             className="cursor-pointer fixed right-5 top-5 text-sky-500"
@@ -70,146 +43,114 @@ function App() {
             aria-label="Github profile"
           >
             <AiFillGithub size={25} />
-          </animated.a>
+          </animated.a> */}
+          <div className="hidden sm:block">
+            <Button onClick={naviagteTo(homeRef)}>Home</Button>
+            <Button onClick={naviagteTo(projecrRef)}>Projects</Button>
+            <Button onClick={naviagteTo(workRef)}>Work</Button>
+          </div>
         </header>
         <main>
           <section
-            className="flex min-h-screen w-full font-sans fixed -z-10"
-            style={{
-              WebkitBackfaceVisibility: "hidden",
-            }}
-            ref={mainRef}
+            ref={homeRef}
+            className="flex min-h-screen justify-center bg-black text-white items-center flex-col text-center"
           >
-            <div className="flex-1 bg-sky-500 relative">
-              <div className="flex flex-1 bg-sky-500 absolute w-full h-full pl-10 pb-10">
-                <animated.div
-                  className="flex p-5 md:p-10 flex-1 justify-end flex-col max-w-lg z-10 fixed"
-                  style={_translateYMain}
-                >
-                  <Slide bottom cascade when={open} duration={500}>
-                    <div>
-                      <p className="text-slate-900 font-bold text-lg ">
-                        Hi, I am Dilum 👋
-                      </p>
-                      <p className="font-bold md:text-lg">
-                        I am really excited that you visted my website, scroll
-                        down to see some of my cool projects.✌️
-                      </p>
-                    </div>
-                  </Slide>
-                </animated.div>
-              </div>
-              <animated.div
-                className="flex flex-1 bg-sky-500 absolute w-full h-full"
-                style={_translateY}
-              >
-                <animated.h2
-                  style={_texttranslateX}
-                  className="font-black text-8xl  md:text-9xl bottom-1/2 -right-24 absolute"
-                >
-                  HE
-                  <br />
-                  LLO
-                </animated.h2>
-              </animated.div>
-            </div>
-            <div className="flex-1 bg-sky-50"></div>
+            <h1 className="font-semibold text-6xl py-5 p-4">
+              Hello friendly human <br />I am Dilum
+            </h1>
+            <h2 className="text-systemGray p-4 text-lg">
+              I am a software engineer who loves to build things that live on
+              the internet. <br /> Scroll down to see a glipse of my work.
+            </h2>
+            <div>{ScrollDOwnView}</div>
           </section>
-          <div className="w-full" style={{ height: bounds.height + 280 }} />
-          <section className={` bg-sky-50 p-10`}>
-            <div className="flex flex-col md:ml-32 mt-5">
-              <h1 className="font-black text-6xl  md:text-8xl text-sky-500 pb-20">
-                <Slide bottom cascade duration={2000}>
-                  <h3 className="flex flex-col">
-                    <span>AB</span>
-                    <span>OUT</span>
-                  </h3>
-                </Slide>
-              </h1>
-              <div className="flex flex-wrap">
-                <Slide bottom cascade duration={500}>
-                  <div className="max-w-lg pb-5">
-                    <h4 className="font-black text-lg ">
-                      Founder <br /> @ Scholalify.
-                    </h4>
-                    <p className="py-5 ">
-                      Scholalify is an educational technology company focused on
-                      providing learning resources for Advanced-level students
-                      in Sri Lanka. We are still in public beta phase and are
-                      planning to launch in the coming months.
-                    </p>
-                    <a
-                      href="https://scholalify.com"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="text-sky-500 hover:text-sky-600 font-bold "
-                    >
-                      Visit scholalify.com
-                    </a>
-                  </div>
-                </Slide>
-                <Slide bottom cascade duration={500}>
-                  <div className="max-w-lg">
-                    <h4 className="font-black text-lg">
-                      Software Engineer <br /> @ Experity Inc.
-                    </h4>
-                    <ol className="list-disc pt-5 pl-5">
-                      <li>
-                        Worked on building scalable, secure and reliable
-                        restfull services.
-                      </li>
-                      <li>Created client facing React components.</li>
-                      <li>
-                        Designed relational database models to store data and
-                        writing SQL/HQL queries to access it.
-                      </li>
-                      <li>
-                        Maintained web applications written in older frameworks
-                        such as Struts 2.0 and GWT.
-                      </li>
-                    </ol>
-                  </div>
-                </Slide>
-              </div>
+          <section ref={projecrRef}>
+            <div className="p-4 pt-10 text-center">
+              <h3 className="font-semibold text-white text-6xl py-5 ">
+                Projects
+              </h3>
+              <p className="text-systemGray ">
+                I have worked on a variety of projects from web apps to mobile
+                apps and here are a my favorite ones.
+              </p>
+            </div>
+            {projects.map((project) => (
+              <ProjectSection {...project} key={project.title} />
+            ))}
+          </section>
+          <section ref={workRef}>
+            <div className="p-4 min-h-screen pt-10 text-center">
+              <h4 className="font-semibold text-white text-6xl py-5 ">Work</h4>
+              <p className="text-systemGray ">
+                Here is my most recent work experiences.
+              </p>
+              <WorkSection
+                title="Software Engineer | Experity Inc"
+                description="I have been working as a software engineer at Experity Inc. for the past 3 years. My work involve around building highly scalable and maintainable web application using Java, Spring Boot, React, Redux, Typescript, and many more. As the company maintains a lot of legacy code, I also have experience in maintaining and refactoring legacy code written in older web frameworks such as Struts. During my work at Experity, I was able to write client libraries that help increase the productivity of the team by 30%."
+              />
             </div>
           </section>
-          <section className={` bg-sky-50 p-10`}>
-            <div className="flex flex-col md:ml-32 mt-5">
-              <h1 className="font-black text-6xl  md:text-8xl text-sky-500 pb-20">
-                <Slide bottom cascade duration={2000}>
-                  <p className="flex flex-col">
-                    <span>PRO</span>
-                    <span>JECTS</span>
-                  </p>
-                </Slide>
-              </h1>
-              <div className="flex flex-wrap ">
-                {projects.map((project) => (
-                  <Project key={project.title} {...project} />
-                ))}
-                {/* <Image src={require("./images/GameOfFocus.png")} /> */}
+          <section>
+            <div className="p-4 min-h-screen pt-10 flex flex-col items-center justify-center">
+              <h4 className="font-semibold text-white text-6xl py-5 ">
+                Contact
+              </h4>{" "}
+              <p className="text-systemGray max-w-[500px] text-center">
+                I am currently looking for new opportunities. If you have any
+                questions or just want to say hi, feel free to send me an email.
+              </p>
+              <div className="flex justify-center flex-wrap items-center">
+                <div className="max-w-[500px]">{ContactView}</div>
+                <div className="animate-bounce">
+                  <a
+                    className="cursor-pointer text-white bg-systemGray6 px-10 rounded py-3 hover:bg-systemGray5 "
+                    target="_blank"
+                    rel="noreferrer"
+                    href="mailto:dilum14@gmail.com"
+                  >
+                    Get in touch
+                  </a>
+                </div>
               </div>
             </div>
           </section>
         </main>
-        <footer className="md:px-10 bg-sky-50">
-          <Slide bottom>
-            <ul
-              className=" bg-sky-500 flex justify-center items-center flex-col md:flex-row "
-              style={{ height: 100 }}
-            >
-              <li>
-                <a
-                  href="https://www.linkedin.com/in/dilum-liyanage-947787197"
-                  className="px-2 text-white font-bold hover:text-sky-100 cursor-pointer"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  LinkedIn
-                </a>
-              </li>
-            </ul>
-          </Slide>
+        <footer className="md:px-10 text-systemGray ">
+          <ul
+            className="flex justify-center items-center flex-col md:flex-row "
+            style={{ height: 100 }}
+          >
+            <li>
+              <a
+                href="https://github.com/d-liya"
+                className="px-2 cursor-pointer hover:text-white"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Github
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/dilum-liyanage"
+                className="px-2 cursor-pointer hover:text-white"
+                target="_blank"
+                rel="noreferrer"
+              >
+                LinkedIn
+              </a>
+            </li>
+            <li>
+              <a
+                className="px-2 cursor-pointer hover:text-white"
+                target="_blank"
+                rel="noreferrer"
+                href="mailto:dilum14@gmail.com"
+              >
+                Email
+              </a>
+            </li>
+          </ul>
         </footer>
       </div>
     </>
