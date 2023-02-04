@@ -62,7 +62,7 @@ function App() {
               I am a software engineer who loves to build things that live on
               the internet. <br /> Scroll down to see a glimpse of my work.
             </h2>
-            <div>{ScrollDOwnView}</div>
+            <div onClick={naviagteTo(projecrRef)}>{ScrollDOwnView}</div>
           </section>
           <section ref={projecrRef}>
             <div className="p-4 pt-10 text-center">
