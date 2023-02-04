@@ -60,7 +60,7 @@ function App() {
             </h1>
             <h2 className="text-systemGray p-4 text-lg">
               I am a software engineer who loves to build things that live on
-              the internet. <br /> Scroll down to see a glipse of my work.
+              the internet. <br /> Scroll down to see a glimpse of my work.
             </h2>
             <div>{ScrollDOwnView}</div>
           </section>
@@ -71,7 +71,7 @@ function App() {
               </h3>
               <p className="text-systemGray ">
                 I have worked on a variety of projects from web apps to mobile
-                apps and here are a my favorite ones.
+                apps and here are my favorite ones.
               </p>
             </div>
             {projects.map((project) => (
@@ -86,7 +86,7 @@ function App() {
               </p>
               <WorkSection
                 title="Software Engineer | Experity Inc"
-                description="I have been working as a software engineer at Experity Inc. for the past 3 years. My work involve around building highly scalable and maintainable web application using Java, Spring Boot, React, Redux, Typescript, and many more. As the company maintains a lot of legacy code, I also have experience in maintaining and refactoring legacy code written in older web frameworks such as Struts. During my work at Experity, I was able to write client libraries that help increase the productivity of the team by 30%."
+                description="I have been working as a software engineer at Experity Inc. for the past 3 years. My work revolves around building highly scalable and maintainable web applications using Java, Spring Boot, React, Redux, Typescript, and many more. As the company maintains a lot of legacy code, I also have experience in maintaining and refactoring legacy code written in older web frameworks such as Struts. During my work at Experity, I was able to write client libraries that help increase the productivity of the team by 30%."
               />
             </div>
           </section>
