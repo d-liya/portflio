@@ -98,7 +98,7 @@ export const projects = [
   {
     title: "Scholalify - A platform that connects students with tutors",
     description:
-      "Scholalify is an ed-tech startup founded by me in 2021 with the aim of providing a better learning experience for students in Sri Lanka. Our first product was an online quiz platform for students to practice for their exams. However, with the rise of online tutoring we decided to pivot our product to a platform that connects students with tutors.",
+      "Scholalify is an ed-tech startup founded by me in 2021 with the aim of providing a better learning experience for students around the world. Our first product was an online quiz platform for students to practice for their exams. However, with the rise of online tutoring we decided to pivot our product to a platform that connects students with tutors.",
     title2:
       "The tech that helps scholalify run with minimal cost and high availability.",
     description2:
@@ -114,6 +114,6 @@ export const projects = [
     title2: "The tech used to build Pask",
     imageLink: "https://pask-6f72b.web.app",
     description2:
-      "Since this was a fun side project, I wanted to build and run it completely using free methods. Since I was using React Native, I decided to use Expo to build the app. Expo is a free and open source toolchain built around React Native to help you build native iOS and Android projects using JavaScript and React. Since I have to save the data on a databse to make it persistent, I decided to use Google's Firebase since it has a generous free tier. Now the only thing left was to host some servers. Since the server proccessing needed for this app is very minimal, I decided to use vercel edge functions to host the serverless functions.",
+      "Since this was a fun side project, I wanted to build and run it completely using free methods. Since I was using React Native, I decided to use Expo to build the app. Expo is a free and open source toolchain built around React Native to help you build native iOS and Android projects using JavaScript and React. Since I have to save the data on a databse to make it persistent, I decided to use Google's Firebase since it has a generous free tier. Now the only thing left was to host some servers. Since the server processing needed for this app is very minimal, I decided to use vercel edge functions to host the serverless functions.",
   },
 ];

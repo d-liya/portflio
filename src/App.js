@@ -6,6 +6,10 @@ import ProjectSection from "./components/ProjectSection";
 import { projects } from "./data";
 import WorkSection from "./components/WorkSection";
 import ContactAnimation from "./images/contact.json";
+import smoothscroll from "smoothscroll-polyfill";
+
+smoothscroll.polyfill();
+
 function App() {
   const { View: ScrollDOwnView } = useLottie({
     animationData: ScrollDOwnAnimation,
@@ -96,8 +100,8 @@ function App() {
                 Contact
               </h4>{" "}
               <p className="text-systemGray max-w-[500px] text-center">
-                I am currently looking for new opportunities. If you have any
-                questions or just want to say hi, feel free to send me an email.
+                If you have any questions or just want to say hi, feel free to
+                send me an email.
               </p>
               <div className="flex justify-center flex-wrap items-center">
                 <div className="max-w-[500px]">{ContactView}</div>
